@@ -472,6 +472,7 @@ a:focus {
   background-color: #f6f6f6;
 }
 
+
 .about_section .img_container .img-box.b1::before {
 
   -webkit-transform: translateY(75px);

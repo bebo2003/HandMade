@@ -1,21 +1,14 @@
-
-
-// Get all elements with class="closebtn"
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-// Loop through all close buttons
-for (i = 0; i < close.length; i++) {
-  // When someone clicks on a close button
-  close[i].onclick = function () {
-
-    // Get the parent of <span class="closebtn"> (<div class="alert">)
-    var div = this.parentElement;
-
-    // Set the opacity of div to 0 (transparent)
-    div.style.opacity = "0";
-
-    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-    setTimeout(function () { div.style.display = "none"; }, 600);
-  }
-}
+const form = document.querySelector("form"),
+  nextBtn = form.querySelector(".nextBtn"),
+  backBtn = form.querySelector(".backBtn"),
+  allInput = form.querySelectorAll(".first input");
+nextBtn.addEventListener("click", () => {
+  allInput.forEach(input => {
+    if (input.value != "") {
+      form.classList.add('secActive');
+    } else {
+      form.classList.remove('secActive');
+    }
+  })
+})
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
